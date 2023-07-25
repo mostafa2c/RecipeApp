@@ -1,0 +1,54 @@
+<div class="main-container">
+  <mat-form-field appearance="outline">
+    <mat-label>Search for recipes</mat-label>
+    <input
+      matInput
+      type="text"
+      [(ngModel)]="searchQuery"
+      (input)="filterRecipes()"
+      placeholder="Search for recipes"
+    />
+  </mat-form-field>
+
+  <div *ngIf="loading">
+    <p>Loading...</p>
+  </div>
+  
+  <div *ngIf="error">
+    <p>Error fetching recipes. Please try again later.</p>
+  </div>
+  
+  <div
+    class="recieps-container"
+    *ngIf="filteredRecipes.length > 0; else noResults"
+  >
+    <mat-card *ngFor="let recipe of filteredRecipes" class="card-container" appHoverHighlight>
+      <mat-card-header>
+        <mat-card-title>{{ recipe.name }}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image class="reciepe-img" [src]="recipe.imageURL" />
+      <mat-card-content>
+        <p>{{ recipe.description }}</p>
+        <ul>
+          <li *ngFor="let ingredient of recipe.ingredients">
+            {{ ingredient }}
+          </li>
+        </ul>
+      </mat-card-content>
+      <mat-card-actions>
+        <button
+          mat-flat-button
+          color="primary"
+          (click)="onSaveRecipe(recipe)"
+          [disabled]="recipe.saved"
+        >
+          {{ recipe.saved ? "Saved" : "Save" }}
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <ng-template #noResults>
+    <p>No recipes found.</p>
+  </ng-template>
+</div>

@@ -1,0 +1,25 @@
+<div class="main-container">
+  <h2>My Recipes</h2>
+
+  <div class="recieps-container">
+    <mat-card *ngFor="let recipe of savedRecipes" class="card-container" appHoverHighlight>
+      <mat-card-header>
+        <mat-card-title>{{ recipe.name }}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image class="reciepe-img" [src]="recipe.imageURL" />
+      <mat-card-content>
+        <p>{{ recipe.description }}</p>
+        <ul>
+          <li *ngFor="let ingredient of recipe.ingredients">
+            {{ ingredient }}
+          </li>
+        </ul>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-icon-button color="warn" (click)="onRemoveRecipe(recipe)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

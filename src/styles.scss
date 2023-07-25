@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.main-container {
+    margin-left: 15px;
+}
+
+.recieps-container {
+    display: flex;
+    align-items: center;
+}
+
+.reciepe-img{
+    height: 100px;
+    margin-bottom: 16px;
+}
+
+.card-container {
+    width: 250px;
+    margin-right: 11px;
+    height: 400px;
+}
+

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Pasta Carbonara",
+    "description": "Classic Italian pasta dish",
+    "ingredients": ["pasta", "bacon", "eggs", "cheese", "black pepper"],
+    "instructions": "Lorem ipsum dolor sit amet...",
+    "imageURL" : "../../assets/images/pasta.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Chicken Stir Fry",
+    "description": "Healthy chicken and vegetable stir fry",
+    "ingredients": ["chicken", "vegetables", "soy sauce", "garlic", "ginger"],
+    "instructions": "Lorem ipsum dolor sit amet...",
+    "imageURL" : "../../assets/images/chiken.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Margherita Pizza",
+    "description": "Traditional Italian pizza topped with tomato sauce",
+    "ingredients": ["pizza dough", "tomato sauce", "fresh mozzarella cheese", "basil leaves", "olive oil"],
+    "instructions": "1. Preheat your oven to 475°F (245°C). \n2. Roll out the pizza dough into your desired shape. \n3. Spread tomato sauce evenly on the dough. \n4. Place slices of fresh mozzarella cheese on top of the sauce. \n5. Tear the basil leaves and scatter them over the cheese. \n6. Drizzle olive oil over the pizza. \n7. Bake in the preheated oven for 10-12 minutes or until the crust is golden and the cheese is bubbly and slightly browned. \n8. Remove from the oven, let it cool slightly, and enjoy your delicious Margherita pizza!",
+    "imageURL" : "../../assets/images/pizza.jpg"
+  }
+]
