@@ -18,7 +18,6 @@ export class RecipeListComponent implements OnInit {
 
   ngOnInit() {
     this.getRecipes();
-    this.loadMyRecipes();
   }
 
   getRecipes() {
@@ -30,6 +29,7 @@ export class RecipeListComponent implements OnInit {
         this.recipes = recipes;
         this.filteredRecipes = recipes;
         this.loading = false;
+        this.loadMyRecipes();
       },
       (error) => {
         console.error('Error fetching recipes:', error);
@@ -56,9 +56,9 @@ export class RecipeListComponent implements OnInit {
     }
   }
 
-  private loadMyRecipes(): void {
+  loadMyRecipes(): void {
     this.recipeService.getsavedRecipes().subscribe((myRecipes) => {
-      this.recipes.forEach((recipe) => {
+      this.filteredRecipes.forEach((recipe) => {
         recipe.saved = myRecipes.some(
           (savedRecipe) => savedRecipe.id === recipe.id,
         );

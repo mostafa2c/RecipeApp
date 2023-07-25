@@ -12,7 +12,7 @@ export class RecipeService {
   private savedRecipesCountSubject = new BehaviorSubject<number>(0);
 
   constructor(private http: HttpClient) {
-    this.loadMyRecipes();
+    this.loadMyRecipesCount();
   }
 
   getRecipes(): Observable<Recipe[]> {
@@ -34,7 +34,7 @@ export class RecipeService {
 
   removeFromSavedRecipes(recipe: Recipe) {
     this.savedRecipes = this.savedRecipes.filter((r) => r.id !== recipe.id);
-    localStorage.setItem('myRecipes', JSON.stringify(this.savedRecipes));
+    this.setToLocalStorage(this.savedRecipes);
     this.savedRecipesCountSubject.next(this.savedRecipes.length);
   }
 
@@ -42,7 +42,7 @@ export class RecipeService {
     return this.savedRecipesCountSubject.asObservable();
   }
 
-  loadMyRecipes() {
+  loadMyRecipesCount() {
     this.savedRecipes = this.getFromLocalStorage();
     this.savedRecipesCountSubject.next(this.savedRecipes.length);
   }

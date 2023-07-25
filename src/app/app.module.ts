@@ -18,6 +18,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MyRecipesComponent } from './my-recipes/my-recipes.component';
 import { TopHeaderComponent } from 'src/shared/components/top-header/top-header.component';
 import { HoverHighlightDirective } from 'src/shared/directives/hover-highlight.directive';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { HoverHighlightDirective } from 'src/shared/directives/hover-highlight.d
     MatListModule,
     MatIconModule,
     MatToolbarModule,
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
